@@ -15,13 +15,11 @@ import java.util.Date;
 import java.util.Properties;
 
 public class SendEmail {
-    final String s="VSFGFMZVREDBZHNQ";
-    String password="wangxiaorong0525";
     // 发件人的 邮箱 和 密码（替换为自己的邮箱和密码）
     // PS: 某些邮箱服务器为了增加邮箱本身密码的安全性，给 SMTP 客户端设置了独立密码（有的邮箱称为“授权码”）,
     //     对于开启了独立密码的邮箱, 这里的邮箱密码必需使用这个独立密码（授权码）。
-    public static String myEmailAccount = "wy1848224883@163.com";
-    public static String myEmailPassword = "VSFGFMZVREDBZHNQ";
+    public static String myEmailAccount = "YourEmailAccount";
+    public static String myEmailPassword = "YourPassword";
 
     // 发件人邮箱的 SMTP 服务器地址, 必须准确, 不同邮件服务器地址不同, 一般(只是一般, 绝非绝对)格式为: smtp.xxx.com
     // 网易126邮箱的 SMTP 服务器地址为: smtp.126.com
@@ -168,10 +166,10 @@ public class SendEmail {
         MimeMessage message = new MimeMessage(session);
 
         // 2. From: 发件人
-        message.setFrom(new InternetAddress(sendMail, "Kaneziki", "UTF-8"));
+        message.setFrom(new InternetAddress(sendMail, "From", "UTF-8"));
 
         // 3. To: 收件人（可以增加多个收件人、抄送、密送）
-        message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail, "玄弦幽", "UTF-8"));
+        message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail, "...", "UTF-8"));
 
         // 4. Subject: 邮件主题
         message.setSubject("Kaneziki Blog 用户信息验证", "UTF-8");
